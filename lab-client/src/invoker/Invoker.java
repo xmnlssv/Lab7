@@ -40,7 +40,7 @@ public class Invoker {
         handle(new HelpCommand(sender));
     }
 
-    public void info() {
+    public void info(String login, String password) {
         handle(new InfoCommand(sender));
     }
 

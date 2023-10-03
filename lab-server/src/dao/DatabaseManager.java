@@ -23,8 +23,8 @@ public class DatabaseManager {
     public DatabaseManager() {
         while (true) {
             try {
-                this.connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/studs",
-                        "s367911", "VA2515SVYu1DvXR1"
+                this.connection = DriverManager.getConnection("***********",
+                        "s******", "***"
 //                        PropertiesUtil.get(URL_KEY),
 //                        PropertiesUtil.get(USERNAME_KEY),
 //                        PropertiesUtil.get(PASSWORD_KEY)

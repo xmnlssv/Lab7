@@ -54,7 +54,7 @@ public class CommandReader {
     public CommandReader() {
         invoker = new Invoker();
         zeroArgMappings.put("help", () -> invoker.help());
-        zeroArgMappings.put("info", () -> invoker.info());
+        zeroArgMappings.put("info", () -> invoker.info(inputReader.getLogin(), inputReader.getPassword()));
         zeroArgMappings.put("show", () -> invoker.show());
         zeroArgMappings.put("sort", () -> invoker.sort());
         zeroArgMappings.put("clear", () -> invoker.clear());
