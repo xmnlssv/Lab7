@@ -27,11 +27,10 @@ public class DatabaseManager {
     public DatabaseManager() {
         while (true) {
             try {
-                this.connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/studs",
-                        "s367911", "VA2515SVYu1DvXR1"
-//                        PropertiesUtil.get(URL_KEY),
-//                        PropertiesUtil.get(USERNAME_KEY),
-//                        PropertiesUtil.get(PASSWORD_KEY)
+                this.connection = DriverManager.getConnection(
+                        PropertiesUtil.get(URL_KEY),
+                        PropertiesUtil.get(USERNAME_KEY),
+                        PropertiesUtil.get(PASSWORD_KEY)
                 );
                 System.out.println("Connection was established successfully.");
                 break;
