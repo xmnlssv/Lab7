@@ -49,8 +49,7 @@ public class Worker {
     }
 
     public static void initialize() throws SQLException {
-        //DatabaseHandler.getDatabaseManager().createMainBase();
-        DatabaseHandler.getDatabaseManager().load();
+        collection = DatabaseHandler.getDatabaseManager().loadCollection();
         PassportIdHelper.initialize(collection);
         IdHelper.initialize(collection);
     }
@@ -79,7 +78,7 @@ public class Worker {
         commands.put("register", "Create your account");
 
         zeroArgMappings.put("help", () -> getInstance().helpAction());
-        zeroArgMappings.put("info", () -> getInstance().infoAction());
+//        zeroArgMappings.put("info", () -> getInstance().infoAction());
         zeroArgMappings.put("show", () -> getInstance().showAction());
         zeroArgMappings.put("sort", () -> getInstance().sortAction());
         zeroArgMappings.put("clear", () -> getInstance().clearAction());
@@ -92,10 +91,10 @@ public class Worker {
         oneArgMappings.put("remove_any_by_author", (arg) -> getInstance().removeByAuthorAction((Person)
                 ServerJsonSerializer.deserialize(arg, Person.class)));
         oneArgMappings.put("remove_by_id", (arg) -> getInstance().removeByIdAction(Integer.parseInt(arg)));
-        oneArgMappings.put("log_in", (arg) -> getInstance().loginAction((UserCredentials) ServerJsonSerializer.
-                deserialize(arg, UserCredentials.class)));
-        oneArgMappings.put("register", (arg) -> getInstance().registerAction((UserCredentials) ServerJsonSerializer.
-            deserialize(arg, UserCredentials.class)));
+//        oneArgMappings.put("log_in", (arg) -> getInstance().loginAction((UserCredentials) ServerJsonSerializer.
+//                deserialize(arg, UserCredentials.class)));
+//        oneArgMappings.put("register", (arg) -> getInstance().registerAction((UserCredentials) ServerJsonSerializer.
+//            deserialize(arg, UserCredentials.class)));
     }
 
     public static Worker getInstance() {
@@ -157,7 +156,6 @@ public class Worker {
 
     public Response clearAction() {
         if (DatabaseManager.getUserCredentials().getLogin() != null) {
-            DatabaseHandler.getDatabaseManager().load();
             boolean isDeleteSuccessful = DatabaseHandler.getDatabaseManager().deleteCollection();
             if (isDeleteSuccessful) {
                 collection.clear();
@@ -212,7 +210,7 @@ public class Worker {
                     DescendingMinimalPointCommand.class,
                     new String[]{},
                     "\"Unauthorised users can only use the \"log_in\", \"register\", \"show\", \"help\" \"commands\"",
-                    Result.SUCCESS
+                    Result.FAILURE
             );
         }
     }
@@ -289,7 +287,7 @@ public class Worker {
         );
     }
 
-    public Response infoAction() {
+    public Response infoAction(String login, String password) {
         if (DatabaseManager.getUserCredentials().getLogin() != null) {
             if (DatabaseManager.getUserCredentials().getLogin() != null) {
                 StringBuilder info = new StringBuilder();
@@ -327,7 +325,7 @@ public class Worker {
         }
     }
 
-    public Response loginAction(UserCredentials userCredentials) {
+    public Response loginAction(UserCredentials userCredentials, String login, String password) {
         if (DatabaseHandler.getDatabaseManager().login(userCredentials.getLogin(), userCredentials.getPassword())) {
             return new Response(
                     LoginCommand.class,
@@ -382,7 +380,7 @@ public class Worker {
         return new Response(
                 RegisterCommand.class,
                 new String[]{ServerJsonSerializer.serialize(userCredentials)},
-                "Unauthorised users can only use the \"log_in\", \"register\", \"show\", \"help\" commands",
+                "User with this login already exists",
                 Result.FAILURE
         );
     }
@@ -416,7 +414,6 @@ public class Worker {
 
     public Response removeByIdAction(long id) {
         if (DatabaseManager.getUserCredentials().getLogin() != null) {
-            DatabaseHandler.getDatabaseManager().load();
             Optional<LabWork> forDeletion = collection.stream().filter(labWork -> labWork.getId() == id).findAny();
             if (forDeletion.isEmpty()) {
                 return new Response(
@@ -456,7 +453,6 @@ public class Worker {
 
     public Response removeGreaterAction(long id) {
         if (DatabaseManager.getUserCredentials().getLogin() != null) {
-            DatabaseHandler.getDatabaseManager().load();
             List<LabWork> forDeletion = collection.stream().filter(labWork -> labWork.getId() > id).toList();
             collection.removeAll(forDeletion);
             return new Response(
@@ -476,7 +472,6 @@ public class Worker {
     }
 
     public Response removeLastAction() {
-        DatabaseHandler.getDatabaseManager().load();
         if (collection.isEmpty()) {
             return new Response(
                     RemoveLastCommand.class,
@@ -531,8 +526,6 @@ public class Worker {
 
     public Response updateAction(long id, LabWork updatedLabWork) {
         if (DatabaseManager.getUserCredentials().getLogin() != null) {
-
-            DatabaseHandler.getDatabaseManager().load();
             Optional<LabWork> forUpdate = collection.stream().filter(labWork -> labWork.getId() == id).findAny();
             if (forUpdate.isEmpty()) {
                 return new Response(

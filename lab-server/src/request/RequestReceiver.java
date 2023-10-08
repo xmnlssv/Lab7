@@ -39,7 +39,7 @@ public class RequestReceiver {
         zeroArgMappings.put(HelpCommand.class, () -> worker.helpAction());
         zeroArgMappings.put(ShowCommand.class, () -> worker.showAction());
         zeroArgMappings.put(SortCommand.class, () -> worker.sortAction());
-        zeroArgMappings.put(InfoCommand.class, () -> worker.infoAction());
+//        zeroArgMappings.put(InfoCommand.class, () -> worker.infoAction());
         zeroArgMappings.put(MinByAuthorCommand.class, () -> worker.minByAuthorAction());
         zeroArgMappings.put(DescendingMinimalPointCommand.class, () -> worker.descendingMinimalPointAction());
         zeroArgMappings.put(RemoveLastCommand.class, () -> worker.removeLastAction());
@@ -49,10 +49,10 @@ public class RequestReceiver {
         oneArgMappings.put(RemoveByAuthorCommand.class, (arg) -> worker.removeByAuthorAction((Person)
                 ServerJsonSerializer.deserialize(arg, Person.class)));
         oneArgMappings.put(RemoveGreaterCommand.class, (arg) -> worker.removeGreaterAction(Integer.parseInt(arg)));
-        oneArgMappings.put(LoginCommand.class, (arg) -> worker.loginAction((UserCredentials) ServerJsonSerializer.
-                deserialize(arg, UserCredentials.class)));
-        oneArgMappings.put(RegisterCommand.class, (arg) -> worker.registerAction((UserCredentials) ServerJsonSerializer.
-                deserialize(arg, UserCredentials.class)));
+//        oneArgMappings.put(LoginCommand.class, (arg) -> worker.loginAction((UserCredentials) ServerJsonSerializer.
+//                deserialize(arg, UserCredentials.class)));
+//        oneArgMappings.put(RegisterCommand.class, (arg) -> worker.registerAction((UserCredentials) ServerJsonSerializer.
+//                deserialize(arg, UserCredentials.class)));
     }
 
     public static void read(
@@ -91,10 +91,24 @@ public class RequestReceiver {
             Response[] responseArray = new Response[responses.size()];
             responses.toArray(responseArray);
             return ServerJsonSerializer.serialize(responseArray);
+        } else if (request.command() == InfoCommand.class) {
+            Response response = worker.infoAction(request.args()[0], request.args()[1]
+            );
+            return ServerJsonSerializer.serialize(response);
         } else if (request.command() == UpdateCommand.class) {
             Response response = worker.updateAction(
                     Integer.parseInt(request.args()[0]),
                     (LabWork) ServerJsonSerializer.deserialize(request.args()[1], LabWork.class)
+            );
+            return ServerJsonSerializer.serialize(response);
+        } else if (request.command() == LoginCommand.class) {
+            Response response = worker.loginAction((UserCredentials) ServerJsonSerializer.
+                    deserialize(request.args()[0], UserCredentials.class), request.args()[1], request.args()[2]
+            );
+            return ServerJsonSerializer.serialize(response);
+        } else if (request.command() == RegisterCommand.class)   {
+            Response response = worker.registerAction((UserCredentials) ServerJsonSerializer.
+                    deserialize(request.args()[0], UserCredentials.class)
             );
             return ServerJsonSerializer.serialize(response);
         } else if (zeroArgMappings.containsKey(request.command())) {

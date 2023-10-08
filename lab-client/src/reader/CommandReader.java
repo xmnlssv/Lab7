@@ -63,10 +63,12 @@ public class CommandReader {
         zeroArgMappings.put("remove_last", () -> invoker.removeLast());
         zeroArgMappings.put("print_field_descending_minimal_point", () -> invoker.descendingMinimalPoint());
         zeroArgMappings.put("add", () -> invoker.add(receiveLabWork()));
-        zeroArgMappings.put("register", () -> invoker.register(receiveUserLoginAndPassword()));
+        zeroArgMappings.put("register", () -> invoker.register(receiveUserLoginAndPassword(), inputReader.getLogin(),
+                inputReader.getPassword()));
         zeroArgMappings.put("remove_greater", () -> invoker.add(receiveAuthor()));
         zeroArgMappings.put("remove_any_by_author", () -> invoker.removeByAuthor(receiveAuthor()));
         zeroArgMappings.put("log_in", () -> invoker.login(receiveUserLoginAndPassword()));
+
         oneArgMappings.put("update", (arg) -> invoker.update(arg, receiveLabWork()));
         oneArgMappings.put("remove_by_id", (arg) -> invoker.removeById(arg));
         oneArgMappings.put("execute_script", (arg) -> invoker.executeScript(arg));

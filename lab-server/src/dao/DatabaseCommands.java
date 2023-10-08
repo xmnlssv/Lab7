@@ -47,17 +47,18 @@ public class DatabaseCommands {
             );
             CREATE TABLE IF NOT EXISTS user_credentials (
                  id SERIAL PRIMARY KEY,
-                 lab_work_id INT REFERENCES lab_work(id),
                  login TEXT UNIQUE NOT NULL,
                  password_hash TEXT NOT NULL      
                  salt TEXT NOT NULL
             );
             """;
     public static final String addUserCredentials = """
-            INSERT INTO user_credentials(login, password_hash, salt) VALUES(?, ?, ?);""";
+            INSERT INTO user_credentials(login, password_hash, salt) VALUES(?, ?, ?);
+            """;
 
     public static final String getUserCredentials = """
-            SELECT * FROM user_credentials WHERE (login = ?);""";
+            SELECT * FROM user_credentials WHERE (login = ?);
+            """;
 
     public static final String addObject = """
             INSERT INTO lab_works(lab_work_name, cord_x, cord_y, creation_date, minimal_point, difficulty, author_name,
@@ -72,11 +73,11 @@ public class DatabaseCommands {
             """;
 
     public static final String deleteUserObject = """
-            DELETE FROM lab_works WHERE (owner_login = ?) AND (id = ?) RETURNING id;
+            DELETE FROM lab_works WHERE (owner_login = ?) AND (id = ?);
             """;
 
     public static final String deleteAllUserObject = """
-            DELETE FROM lab_works WHERE (owner_login = ?) RETURNING id;
+            DELETE FROM lab_works WHERE (owner_login = ?);
             """;
 
     public static final String updateUserObject = """

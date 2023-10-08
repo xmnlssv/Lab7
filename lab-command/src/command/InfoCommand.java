@@ -4,12 +4,16 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import endpoint.RequestSender;
 
 public class InfoCommand extends NoArgsCommand {
-    public InfoCommand(RequestSender sender) {
+    private String login;
+    private String password;
+    public InfoCommand(RequestSender sender, String login, String password) {
         super(sender);
+        this.login = login;
+        this.password = password;
     }
 
     @Override
     public void execute() {
-        getSender().send(InfoCommand.class);
+        getSender().send(InfoCommand.class, login, password);
     }
 }

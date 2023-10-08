@@ -9,6 +9,9 @@ import worker.PasswordHashed;
 import worker.Worker;
 
 import java.sql.*;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class DatabaseManager {
     public static final String URL_KEY = "db.url";
@@ -19,17 +22,18 @@ public class DatabaseManager {
     private String salt = PasswordHashed.generateSalt();
     private ZonedDateTimeAdapter zonedDateTimeAdapter = new ZonedDateTimeAdapter();
     private static UserCredentials userCredentials;
+    private static Logger logger = Logger.getLogger(DatabaseManager.class.getName());
 
     public DatabaseManager() {
         while (true) {
             try {
-                this.connection = DriverManager.getConnection("***********",
-                        "s******", "***"
+                this.connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/studs",
+                        "s367911", "VA2515SVYu1DvXR1"
 //                        PropertiesUtil.get(URL_KEY),
 //                        PropertiesUtil.get(USERNAME_KEY),
 //                        PropertiesUtil.get(PASSWORD_KEY)
                 );
-                System.out.println("Connection was established  successfully.");
+                System.out.println("Connection was established successfully.");
                 break;
             } catch (PSQLException psqlException) {
                 System.out.println("Database is not available at the moment therefore SSH tunnel inactive." +
@@ -41,44 +45,102 @@ public class DatabaseManager {
         }
     }
 
+
+//    public String load() {
+//        try (ResultSet resultSet = connection.createStatement().executeQuery(DatabaseCommands.getAllObjects)) {
+//            worker.getCollection().clear();
+//            while (resultSet.next()) {
+//                int id = resultSet.getInt("id");
+//                String name = resultSet.getString("name");
+//                Coordinates coordinates = new Coordinates(resultSet.getDouble("x"),
+//                        resultSet.getLong("y"));
+//                String creationDate = resultSet.getString("creation_date");
+//                long minimalPoint = resultSet.getInt("minimal_point");
+//                Difficulty difficulty = Difficulty.valueOf(resultSet.getString("difficulty"));
+//                Person author = new Person(resultSet.getString("name"), resultSet.
+//                        getString("passport_id"), EyeColor.valueOf(resultSet.getString("eye_color")),
+//                        HairColor.valueOf(resultSet.getString("hair_color")), Country.valueOf(resultSet.
+//                                getString("nationality")), new Location(resultSet.
+//                                getFloat("x_location"),
+//                                resultSet.getLong("y_location"), resultSet.getInt("z_location")));
+//                EyeColor eyeColor = EyeColor.valueOf(resultSet.getString("eye_color"));
+//                HairColor hairColor = HairColor.valueOf(resultSet.getString("hair_color"));
+//                Country nationality = Country.valueOf(resultSet.getString("nationality"));
+//                Location location = new Location(resultSet.getFloat("x_location"),
+//                        resultSet.getLong("y_location"), resultSet.getInt("z_location"));
+//                String login = resultSet.getString("owner_login");
+//                worker.getCollection().add(new LabWork(id, name, coordinates,
+//                        zonedDateTimeAdapter.unmarshal(creationDate), minimalPoint, difficulty, author, login));
+//            }
+//            return "Collection was loaded..";
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            return "Collection can not be loaded now. Please try later.";
+//        }
+//    }
+
     /**
      * Loads collection from database
      *
      * @return result of loading
      */
-    public String load() {
-        try (ResultSet resultSet = connection.createStatement().executeQuery(DatabaseCommands.getAllObjects)) {
-            worker.getCollection().clear();
+    public ArrayList<LabWork> loadCollection() {
+        try {
+            PreparedStatement statement = connection.prepareStatement(DatabaseCommands.getAllObjects);
+            ResultSet resultSet = statement.executeQuery();
+            ArrayList<LabWork> collection = new ArrayList<>();
             while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                Coordinates coordinates = new Coordinates(resultSet.getDouble("x"),
-                        resultSet.getLong("y"));
-                String creationDate = resultSet.getString("creation_date");
-                long minimalPoint = resultSet.getInt("minimal_point");
-                Difficulty difficulty = Difficulty.valueOf(resultSet.getString("difficulty"));
-                Person author = new Person(resultSet.getString("name"), resultSet.
-                        getString("passport_id"), EyeColor.valueOf(resultSet.getString("eye_color")),
-                        HairColor.valueOf(resultSet.getString("hair_color")), Country.valueOf(resultSet.
-                                getString("nationality")), new Location(resultSet.
-                                getFloat("x_location"),
-                                resultSet.getLong("y_location"), resultSet.getInt("z_location")));
-                EyeColor eyeColor = EyeColor.valueOf(resultSet.getString("eye_color"));
-                HairColor hairColor = HairColor.valueOf(resultSet.getString("hair_color"));
-                Country nationality = Country.valueOf(resultSet.getString("nationality"));
-                Location location = new Location(resultSet.getFloat("x_location"),
-                        resultSet.getLong("y_location"), resultSet.getInt("z_location"));
-                String login = resultSet.getString("owner_login");
-                worker.getCollection().add(new LabWork(id, name, coordinates,
-                        zonedDateTimeAdapter.unmarshal(creationDate), minimalPoint, difficulty, author, login));
-            }
-            return "Collection was loaded..";
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return "Collection can not be loaded now. Please try later.";
-        }
-    }
+                Coordinates coordinates = new Coordinates(
+                        resultSet.getDouble("cord_x"), resultSet.getLong("cord_y"));
+                Location location = new Location(
+                        resultSet.getFloat("author_location_x"),
+                        resultSet.getLong("author_location_y"),
+                        resultSet.getInt("author_location_z"));
+                Difficulty difficulty = null;
+                if (resultSet.getString("difficulty") != null) {
+                    difficulty = Difficulty.valueOf(resultSet.getString("difficulty"));
+                }
+                EyeColor eyeColor = null;
+                if (resultSet.getString("author_eye_color") != null) {
+                    eyeColor = EyeColor.valueOf(resultSet.getString("author_eye_color"));
+                }
+                HairColor hairColor = null;
+                if (resultSet.getString("author_hair_color") != null) {
+                    hairColor = HairColor.valueOf(resultSet.getString("author_hair_color"));
+                }
+                Country nationality = null;
+                if (resultSet.getString("author_nationality") != null) {
+                    nationality = Country.valueOf(resultSet.getString("author_nationality"));
+                }
 
+                Person author = new Person(
+                        resultSet.getString("author_name"),
+                        resultSet.getString("author_passport_id"),
+                        eyeColor,
+                        hairColor,
+                        nationality,
+                        location
+                );
+
+                LabWork labWork = new LabWork(
+                        resultSet.getInt("id"),
+                        resultSet.getString("lab_work_name"),
+                        coordinates,
+                        resultSet.getDate("creation_date").toLocalDate().atStartOfDay(ZoneId.systemDefault()),
+                        resultSet.getDouble("minimal_point"),
+                        difficulty,
+                        author,
+                        resultSet.getString("owner_login")
+                );
+                collection.add(labWork);
+            }
+            System.out.println("The user's collection is loaded. Number of items – " + collection.size());
+            return collection;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
     public static void populatePreparedStatementForLabWork
             (PreparedStatement preparedStatement, LabWork labWork) throws SQLException {
         preparedStatement.setString(1, labWork.getName());
@@ -103,44 +165,46 @@ public class DatabaseManager {
 //        System.out.println("Tables have been created");
 //    }
 
-    public boolean register(String login, String password) {
+    public boolean loginExist(String login) throws SQLException{
+            PreparedStatement checkStatement = connection.prepareStatement(DatabaseCommands.getUserCredentials);
+            checkStatement.setString(1, login);
+            ResultSet resultSet = checkStatement.executeQuery();
+            return resultSet.next();
+    }
+    public boolean register(String login, String password){
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(DatabaseCommands.login);
-            preparedStatement.setString(1, login);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-            if (resultSet.getInt(1) == 0) {
-                PreparedStatement preparedStatement2 = connection.prepareStatement(DatabaseCommands.register);
-                preparedStatement2.setString(1, login);
-                preparedStatement2.setString(2, PasswordHashed.hashPassword(password, salt));
-                preparedStatement2.execute();
-                return true;
-            } else {
-                System.out.println("User is already exist.");
+            if (loginExist(login)) {
                 return false;
             }
+            PreparedStatement preparedStatement = connection.prepareStatement(DatabaseCommands.register);
+            preparedStatement.setString(1, login);
+            preparedStatement.setString(2, PasswordHashed.hashPassword(password, salt));
+            preparedStatement.setString(3, salt);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            System.out.println("New user added.");
+            return true;
+
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
-            System.out.println("User is already exist.");
+            System.out.println("Failed to add a user.");
             return false;
         }
     }
 
     public boolean login(String login, String password) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(DatabaseCommands.login);
+            PreparedStatement preparedStatement = connection.prepareStatement(DatabaseCommands.getUserCredentials);
             preparedStatement.setString(1, login);
-            preparedStatement.setString(2, PasswordHashed.hashPassword(password, salt));
             ResultSet resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-            if (resultSet.getInt(1) == 1) {
-                DatabaseManager.getUserCredentials().setLogin(login);
-                return true;
-            } else if (resultSet.getInt(1) > 1) {
-                System.out.println("Database error. Login is not unique. Try later.");
-                System.exit(1);
+            if (resultSet.next()) {
+                String truePassword = resultSet.getString("password");
+                String trueSalt = resultSet.getString("salt");
+                String checkPassword = PasswordHashed.hashPassword(password, trueSalt);
+                return checkPassword.equals(truePassword);
+            } else {
                 return false;
-            } else throw new SQLException();
+            }
         } catch (SQLException sqlException) {
             System.out.println("User not found. You can register this account.");
             return false;

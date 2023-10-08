@@ -41,7 +41,7 @@ public class Invoker {
     }
 
     public void info(String login, String password) {
-        handle(new InfoCommand(sender));
+        handle(new InfoCommand(sender, login, password));
     }
 
     public void login(String arg) {
@@ -52,8 +52,8 @@ public class Invoker {
         handle(new MinByAuthorCommand(sender));
     }
 
-    public void register(String arg) {
-        handle(new RegisterCommand(sender), arg);
+    public void register(String arg, String login, String password) {
+        handle(new RegisterCommand(sender, login, password), arg);
     }
 
     public void removeByAuthor(String arg) {
@@ -72,7 +72,7 @@ public class Invoker {
         handle(new RemoveLastCommand(sender));
     }
 
-    public void show() {
+    public void show()  {
         handle(new ShowCommand(sender));
     }
 
