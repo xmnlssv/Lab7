@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="09fe5822-b771-4709-acf5-99b48ac7423c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../lab-command/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/lab-command.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/lab-command.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/AbstractCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/DescendingMinimalPointCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/DescendingMinimalPointCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/InfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/LoginCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/MinByAuthorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/MinByAuthorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/NoArgsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/NoArgsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/OneArgCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/OneArgCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/RegisterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/RegisterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/RemoveByAuthorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/RemoveByAuthorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/RemoveByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/RemoveGreaterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/RemoveGreaterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/RemoveLastCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/RemoveLastCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/ShowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/SortCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/SortCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/TwoArgsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/TwoArgsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/UpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/connection/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/connection/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/exceptions/WrongArityException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/exceptions/WrongArityException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/input/InputMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/input/InputMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/input/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/input/InputReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/request/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/request/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/response/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/response/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/response/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/response/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab-model.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/authentication/UserCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/authentication/UserCredentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Difficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/EyeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/EyeColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/HairColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/HairColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/LabWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/LabWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/LabWorksArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/LabWorksArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/LogUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/LogUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PropertiesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ZonedDateTimeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ZonedDateTimeAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../script.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2WX95Ga7UjclBToCh4EOlYK1gSr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/kurorolucifer/Lab7/lab-model",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09fe5822-b771-4709-acf5-99b48ac7423c" name="Changes" comment="" />
+      <created>1696867872479</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696867872479</updated>
+      <workItem from="1696867874148" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

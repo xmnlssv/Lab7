@@ -1,0 +1,14 @@
+model/EyeColor.class
+model/LabWorksArrayList.class
+model/LabWork.class
+authentication/UserCredentials.class
+model/Location.class
+model/Difficulty.class
+model/Person.class
+model/HairColor.class
+utils/PropertiesUtil.class
+utils/ZonedDateTimeAdapter.class
+model/LabWork$LabWorkBuilder.class
+model/Coordinates.class
+model/Country.class
+utils/LogUtil.class

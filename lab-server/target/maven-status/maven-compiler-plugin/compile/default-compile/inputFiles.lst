@@ -1,0 +1,14 @@
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/serializer/ServerJsonSerializer.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/connection/ConnectionManager.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/worker/IdHelper.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/dao/DatabaseHandler.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/serializer/CollectionSerializer.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/worker/PasswordHashed.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/request/RequestReceiver.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/response/AddressedResponse.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/response/ResponseSender.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/dao/DatabaseManager.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/server/Server.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/worker/Worker.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/worker/PassportIdHelper.java
+/Users/kurorolucifer/Lab7/lab-server/src/main/java/dao/DatabaseCommands.java

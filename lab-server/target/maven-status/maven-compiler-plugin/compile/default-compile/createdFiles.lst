@@ -1,0 +1,14 @@
+serializer/ServerJsonSerializer.class
+connection/ConnectionManager.class
+worker/PassportIdHelper.class
+response/ResponseSender.class
+response/AddressedResponse.class
+server/Server.class
+worker/IdHelper.class
+dao/DatabaseCommands.class
+dao/DatabaseHandler.class
+dao/DatabaseManager.class
+worker/Worker.class
+worker/PasswordHashed.class
+request/RequestReceiver.class
+serializer/CollectionSerializer.class

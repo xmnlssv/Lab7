@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9cc57ff9-c368-4135-994e-a5310cd60de8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../lab-client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab-command/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab-model/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/lab-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/lab-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/endpoint/RequestQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/endpoint/RequestQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/endpoint/RequestSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/endpoint/RequestSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/endpoint/ResponseReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/endpoint/ResponseReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/exceptions/CustomIOException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/exceptions/CustomIOException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/exceptions/FilePermissionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/exceptions/FilePermissionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/exceptions/InvalidFileDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/exceptions/InvalidFileDataException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/invoker/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/invoker/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/reader/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/reader/CommandReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-client/src/serializer/ClientJsonSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-client/src/main/java/serializer/ClientJsonSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/lab-command.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/lab-command.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/AbstractCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/DescendingMinimalPointCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/DescendingMinimalPointCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/InfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/LoginCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/MinByAuthorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/MinByAuthorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/NoArgsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/NoArgsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/OneArgCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/OneArgCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/RegisterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/RegisterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/RemoveByAuthorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/RemoveByAuthorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/RemoveByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/RemoveGreaterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/RemoveGreaterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/RemoveLastCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/RemoveLastCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/ShowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/SortCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/SortCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/TwoArgsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/TwoArgsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/command/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/command/UpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/connection/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/connection/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/exceptions/WrongArityException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/exceptions/WrongArityException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/input/InputMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/input/InputMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/input/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/input/InputReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/request/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/request/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/response/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/response/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-command/src/response/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-command/src/main/java/response/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/lab-model.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/lab-model.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/authentication/UserCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/authentication/UserCredentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/model/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/model/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/model/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/model/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/model/Difficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/model/EyeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/model/EyeColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/model/HairColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/model/HairColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/model/LabWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/model/LabWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/model/LabWorksArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/model/LabWorksArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/utils/LogUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/utils/LogUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/utils/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/utils/PropertiesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-model/src/utils/ZonedDateTimeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-model/src/main/java/utils/ZonedDateTimeAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab-server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/connection/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connection/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DatabaseCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DatabaseCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DatabaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/request/RequestReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/RequestReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/response/AddressedResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/AddressedResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/response/ResponseSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/ResponseSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serializer/CollectionSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serializer/CollectionSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serializer/ServerJsonSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serializer/ServerJsonSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/worker/IdHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/worker/IdHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/worker/PassportIdHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/worker/PassportIdHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/worker/PasswordHashed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/worker/PasswordHashed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/worker/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/worker/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../script.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2WX9PQq7w9DerpQGbdlYErF589e" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/kurorolucifer/Lab7/lab-server",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9cc57ff9-c368-4135-994e-a5310cd60de8" name="Changes" comment="" />
+      <created>1696868032921</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696868032921</updated>
+      <workItem from="1696868034547" duration="16000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

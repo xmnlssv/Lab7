@@ -1,3 +1,0 @@
-show
-min_by_author
-help
